@@ -6,11 +6,11 @@ GMMAT links to R packages <a href="https://CRAN.R-project.org/package=Rcpp">Rcpp
 
 For optimal computational performance, it is recommended to use an R version configured with the Intel Math Kernel Library (or other fast BLAS/LAPACK libraries). See the <a href="https://software.intel.com/en-us/articles/using-intel-mkl-with-r">instructions</a> on building R with Intel MKL.
 ## Version
-The current version is 1.4.2 (November 17, 2023).
+The current version is 1.5.0 (November 21, 2025).
 ## License
 This software is licensed under GPL (>= 3).
 ## Contact
-Please refer to the R help document of GMMAT for specific questions about each function. For comments, suggestions, bug reports and questions, please contact Han Chen (Han.Chen.2 AT uth.tmc.edu). For bug reports, please include an example to reproduce the problem without having to access your confidential data.
+Please refer to the R help document of GMMAT for specific questions about each function. For comments, suggestions, bug reports and questions, please contact Han Chen (hanchenphd AT gmail.com). For bug reports, please include an example to reproduce the problem without having to access your confidential data.
 ## Acknowledgments
 Duy T. Pham implemented support for BGEN genotype files and SeqVarGDSClass objects. We would like to thank Dr. Chaolong Wang and Dr. Brian Cade for comments and suggestions on GMMAT and the user manual. We would also like to thank Dr. Matthew Conomos for help with the Average Information REML algorithm, Dr. Stephanie Gogarten for help with the GDS genotype format, Jennifer Brody for help with parallel computing and App development in <a href="http://analysiscommons.com/">Analysis Commons</a>, a cloud computing platform, Arthur Gilly for supporting reordered group definition files in SMMAT.meta, and Dr. Rounak Dey for supporting imputed dosage GDS files. The GMMAT implementation is supported by NIH grant R00 HL130593, and the analysis pipeline implementation (the gmmat App) in <a href="http://analysiscommons.com/">Analysis Commons</a> is supported by NIH grant U01 HL120393.
 ## References

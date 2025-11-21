@@ -1,8 +1,8 @@
 Package: GMMAT
-Version: 1.4.2
-Date: 2023-11-17
+Version: 1.5.0
+Date: 2025-11-21
 Title: Generalized Linear Mixed Model Association Tests
-Authors@R: c(person("Han", "Chen", role = c("aut", "cre"), email = "han.chen.2@uth.tmc.edu"),
+Authors@R: c(person("Han", "Chen", role = c("aut", "cre"), email = "hanchenphd@gmail.com"),
              person("Matthew", "Conomos", role = "aut"),
 	     person("Duy", "Pham", role = "aut"),
 	     person("Arthor", "Gilly", role = "ctb"),
@@ -40,4 +40,4 @@ Author: Han Chen [aut, cre],
     code used in the included Zstandard (zstd) library),
   Meta Platforms, Inc. and affiliates [cph] (Copyright holder of included
     Zstandard (zstd) library)
-Maintainer: Han Chen <han.chen.2@uth.tmc.edu>
+Maintainer: Han Chen <hanchenphd@gmail.com>
