@@ -306,7 +306,7 @@ glmmkin.ai <- function(fit0, kins, covariance.idx = NULL, group.idx, tau = rep(0
   if(!is.null(covariance.idx)) idxtau2 <- intersect(covariance.idx[, 1], idxtau)
   q2 <- sum(fixtau == 0)
   if(q2 > 0) {
-    tau[idxtau] <- rep(var(Y)/(q+ng), q2)
+    tau[idxtau] <- if(family$family %in% c("poisson", "binomial")) rep(0, q2) else rep(var(Y)/(q+ng), q2)
     if(!is.null(covariance.idx)) tau[idxtau2] <- 0
     diagSigma <- rep(0, n)
     for(i in 1:ng) diagSigma[group.idx[[i]]] <- tau[i]/sqrtW[group.idx[[i]]]^2
@@ -356,6 +356,10 @@ glmmkin.ai <- function(fit0, kins, covariance.idx = NULL, group.idx, tau = rep(0
     else fit <- R_fitglmm_ai_dense(Y, X, q, kins, ng, group.idx, sqrtW^2, tau, fixtau)
     if(q2 > 0) {
       Dtau <- as.numeric(fit$Dtau)
+      if(family$family %in% c("poisson", "binomial")) {
+        step_cap <- 0.5 * pmax(abs(tau0[idxtau]), 1)
+        Dtau <- pmax(pmin(Dtau, step_cap), -step_cap)
+      }
       tau[idxtau] <- tau0[idxtau] + Dtau
       if(is.null(covariance.idx)) {
         tau[tau < tol & tau0 < tol] <- 0
